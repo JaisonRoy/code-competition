@@ -20,34 +20,40 @@ app.get('/home',(req,res) =>{
 });
 
 app.get('/mailer',(req,res) => {
+  console.log(req.query.email)
     var usermail ={
-        email:req.params("email")
+        email:req.query.email
+
     }
+    
+    var transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: 'jaisonroy700@gmail.com',
+        pass:'jaison777'
+        
+      }
+    });
+    
+    var mailOptions = {
+      from: 'jaisonroy700@gmail.com',
+      to:usermail.email,
+      subject: 'Sending Email',
+      text: 'automatic mailing program'
+    };
+    
+    transporter.sendMail(mailOptions, function(error, info){
+      if (error) {
+        res.send(error)
+        console.log(error);
+      } else {
+        res.send("email send to " + usermail.email)
+      }
+    });
 })
 
 
-var transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: 'jaisonroy700@gmail.com',
-      
-    }
-  });
-  
-  var mailOptions = {
-    from: 'jaisonroy700@gmail.com',
-    to: 'email',
-    subject: 'Sending Email',
-    text: 'automatic mailing program'
-  };
-  
-  transporter.sendMail(mailOptions, function(error, info){
-    if (error) {
-      console.log(error);
-    } else {
-      console.log('Email sent: ' + info.response);
-    }
-  });
+
 
 
 app.listen(3000,() => {
