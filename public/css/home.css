@@ -1,0 +1,30 @@
+body {
+    background-color: coral;
+}
+
+#eform {
+    margin-top: 15%;
+    margin-left: 35%;
+    margin-right: 35%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-radius: 30px;
+    background-color: rgb(16, 238, 116);
+    text-align: center;
+
+
+}
+
+#emaillabel {
+    font-size: 20px;
+}
+
+#usermail {
+    padding: 10px;
+}
+
+#button{
+    background-color: rgb(8, 217, 245);
+    padding: 5px;
+    color: rgb(220, 20, 80);
+}
