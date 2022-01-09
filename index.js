@@ -29,14 +29,14 @@ app.get('/mailer',(req,res) => {
     var transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'jaisonroy700@gmail.com',
-        pass:'jaison777'
+        user: 'queeee738123@gmail.com',
+        pass:'hello@123'
         
       }
     });
     
     var mailOptions = {
-      from: 'jaisonroy700@gmail.com',
+      from: 'queeee738123@gmail.com',
       to:usermail.email,
       subject: 'Sending Email',
       text: 'automatic mailing program'
